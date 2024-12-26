@@ -14,14 +14,14 @@ namespace DataInfruStructure.Injection;
 public static class DataLayerInjections
 {
 
-    public static IServiceCollection Injects(this IServiceCollection services, IConfiguration conf)
+    public static IServiceCollection DataConfiguration(this IServiceCollection services, IConfiguration conf)
     {
         services.AddScoped<ICategoryRepository, CategoryRepository>();
 
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 
-        services.AddDbContext<AppDbContext>(options => options.UseSqlServer(conf.GetConnectionString("AppDbContextConeectionString")));
+        services.AddDbContext<AppDbContext>(options => options.UseSqlServer(conf.GetConnectionString("AppDbContextConnectionString")));
 
         return services;
     }

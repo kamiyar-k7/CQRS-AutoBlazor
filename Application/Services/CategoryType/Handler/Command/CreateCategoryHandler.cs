@@ -19,9 +19,9 @@ public class CreateCategoryHandler : IRequestHandler<CreateCategoryRequest, Unit
     {
         Category category = new Category()
         {
-            Description = request.createCategoryDto.Description,
-            CreateDate = request.createCategoryDto.CreateDate,
-            Title = request.createCategoryDto.Title,
+            Description = request.CreateCategoryDto.Description,
+            CreateDate = request.CreateCategoryDto.CreateDate,
+            Title = request.CreateCategoryDto.Title,
         };
 
 

@@ -1,10 +1,9 @@
 ﻿using DataInfruStructure.DbContextFolder;
-using Domain.Entities;
 using Domain.IRepository.ICategory;
 
 namespace DataInfruStructure.Repository.Category;
 
-public class CategoryRepository : GenericRepository<Category>, ICategoryRepository
+public class CategoryRepository : GenericRepository<Domain.Entities.Category>, ICategoryRepository
 {
 
 
@@ -16,3 +15,4 @@ public class CategoryRepository : GenericRepository<Category>, ICategoryReposito
 
 
 }
+ 
