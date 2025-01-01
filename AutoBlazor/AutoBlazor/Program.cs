@@ -1,6 +1,4 @@
 using AutoBlazor.Components;
-using AutoBlazor.shared.Services.CategoryServices;
-using AutoBlazor.Shared.Services.Base.ClientServcies;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,12 +9,9 @@ builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 
 
-builder.Services.AddHttpClient<IClient, Client>(url => url.BaseAddress = new Uri("https://localhost:7133"));
+//builder.Services.AddHttpClient<IClient, Client>(url => url.BaseAddress = new Uri("https://localhost:7133"));
 
 
-
-
-builder.Services.AddScoped<ICategoryServices, CategoryServices>();
 
 var app = builder.Build();
 
