@@ -1,6 +1,8 @@
 ﻿@page "/"
+@using System.Runtime.InteropServices
 
-@inject ICategoryServices _categoryService
+@inject  ICategoryServices _category
+
 
 <PageTitle>Home</PageTitle>
 
@@ -8,21 +10,28 @@
 
 Welcome to your new app.
 
+
+<p>
+    You are using: @(RuntimeInformation.IsOSPlatform(OSPlatform.Create("BROWSER")) ? "Blazor WebAssembly" : "Blazor Server")
+</p>
+
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
             <th>Id</th>
             <th>title</th>
             <th>Description</th>
+            <th>Date</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in cats)
         {
-            <tr> 
+            <tr>
                 <td>@item.Id</td>
-                <td>@item.Title</td> 
+                <td>@item.Title </td>
                 <td>@item.Description</td>
+                <td>@item.CreateDate</td>
             </tr>
         }
     </tbody>
@@ -30,11 +39,13 @@ Welcome to your new app.
 
 
 @code {
-    List<CategoryDto> cats = new List<CategoryDto>();
+    List<CategoryDto> cats =  new List<CategoryDto>();
 
+
+   
     protected override async Task OnInitializedAsync()
     {
-        cats = await _categoryService.GetCategoryList();
+        cats = await _category.GetCategories();
 
 
     }

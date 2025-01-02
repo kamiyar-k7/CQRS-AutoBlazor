@@ -1,4 +1,5 @@
 using Application.InjectionContainer;
+using Autofac.Core;
 using DataInfruStructure.Injection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,7 +16,20 @@ builder.Services.ApplicationConfiguration();
 builder.Services.DataConfiguration(builder.Configuration);
 
 
+#region Cors
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", b => b.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin());
+});
+
+#endregion
+
 var app = builder.Build();
+
+
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -26,6 +40,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 

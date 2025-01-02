@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoBlazor", "AutoBlazor\Au
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoBlazor.Client", "AutoBlazor\AutoBlazor.Client\AutoBlazor.Client.csproj", "{F160C898-3C86-483C-A571-1200F056EA9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoBlazor.Shared", "AutoBlazor.Shared\AutoBlazor.Shared.csproj", "{1B09E0D3-881E-4F71-8E9C-8A67EA58DE1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{F160C898-3C86-483C-A571-1200F056EA9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F160C898-3C86-483C-A571-1200F056EA9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F160C898-3C86-483C-A571-1200F056EA9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B09E0D3-881E-4F71-8E9C-8A67EA58DE1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B09E0D3-881E-4F71-8E9C-8A67EA58DE1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B09E0D3-881E-4F71-8E9C-8A67EA58DE1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B09E0D3-881E-4F71-8E9C-8A67EA58DE1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,5 +78,6 @@ Global
 		{F20C0594-AFD6-4B56-A5B7-ACE165BCF22F} = {9D5506B4-6969-42B4-9C69-67796F6AF41F}
 		{23096E68-83B2-4C97-BBA2-6C3AE488A849} = {97CFD476-36E0-453E-889A-19CCD1A66A87}
 		{F160C898-3C86-483C-A571-1200F056EA9B} = {97CFD476-36E0-453E-889A-19CCD1A66A87}
+		{1B09E0D3-881E-4F71-8E9C-8A67EA58DE1A} = {97CFD476-36E0-453E-889A-19CCD1A66A87}
 	EndGlobalSection
 EndGlobal

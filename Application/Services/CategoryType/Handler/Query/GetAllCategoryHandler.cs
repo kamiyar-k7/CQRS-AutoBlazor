@@ -33,6 +33,7 @@ public class GetAllCategoryHandler : IRequestHandler<GetAllCategoryRequest, List
                 Description = category.Description,
                 Id = category.Id,
                 Title = category.Title,
+                CreateDate = category.CreateDate    
             };
             listOfCategory.Add(categoryDto);
 

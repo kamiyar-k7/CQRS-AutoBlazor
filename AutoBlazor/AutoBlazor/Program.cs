@@ -1,5 +1,6 @@
 using AutoBlazor.Components;
-
+using AutoBlazor.Shared.Services.Base.ClientServcies;
+using AutoBlazor.Shared.Services.CategoryServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,13 +10,16 @@ builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 
 
-//builder.Services.AddHttpClient<IClient, Client>(url => url.BaseAddress = new Uri("https://localhost:7133"));
+builder.Services.AddHttpClient<IClient, Client>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7133"); 
+});
 
-
+builder.Services.AddScoped<ICategoryServices, CategoryServices>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseWebAssemblyDebugging();
@@ -27,8 +31,8 @@ else
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
 
+app.UseHttpsRedirection();
 
 app.UseAntiforgery();
 

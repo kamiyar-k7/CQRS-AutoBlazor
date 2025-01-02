@@ -1,23 +1,31 @@
-﻿
-using AutoBlazor.Shared.Services.Base.ClientServcies;
+﻿using AutoBlazor.Shared.Services.Base.ClientServcies;
 
-namespace AutoBlazor.shared.Services.CategoryServices;
+namespace AutoBlazor.Shared.Services.CategoryServices;
+
 
 public class CategoryServices : ICategoryServices
 {
     #region Ctor
+    //private readonly HttpClient _httpClient;
+
+    //public CategoryServices(HttpClient httpClient)
+    //{
+    //    _httpClient = httpClient;
+    //}
+
     private readonly IClient _client;
 
     public CategoryServices(IClient client)
     {
         _client = client;
     }
+
     #endregion
 
-
-    public async Task<List<CategoryDto>> GetCategoryList()
+    public async Task<List<CategoryDto>> GetCategories()
     {
-        var categoryList = await _client.GetAllCategoriesAsync();
-        return categoryList.ToList();
+        var cats = await _client.GetAllCategoriesAsync();
+
+        return cats.ToList();
     }
 }

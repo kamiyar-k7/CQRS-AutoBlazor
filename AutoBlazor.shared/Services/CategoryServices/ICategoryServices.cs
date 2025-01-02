@@ -1,10 +1,8 @@
-﻿
-using AutoBlazor.Shared.Services.Base.ClientServcies;
+﻿using AutoBlazor.Shared.Services.Base.ClientServcies;
 
-namespace AutoBlazor.shared.Services.CategoryServices;
+namespace AutoBlazor.Shared.Services.CategoryServices;
 
 public interface ICategoryServices
 {
-
-    Task<List<CategoryDto>> GetCategoryList();
+    Task<List<CategoryDto>> GetCategories();
 }

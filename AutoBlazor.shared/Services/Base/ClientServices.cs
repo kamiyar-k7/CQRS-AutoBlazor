@@ -66,21 +66,14 @@ namespace AutoBlazor.Shared.Services.Base.ClientServcies
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class Client : IClient
     {
-        #pragma warning disable 8618
-        private string _baseUrl;
-        #pragma warning restore 8618
-
         private System.Net.Http.HttpClient _httpClient;
         private static System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(CreateSerializerSettings, true);
         private Newtonsoft.Json.JsonSerializerSettings _instanceSettings;
 
     #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-        public Client(string baseUrl, System.Net.Http.HttpClient httpClient)
+        public Client(System.Net.Http.HttpClient httpClient)
     #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
-            _baseUrl = (string.IsNullOrEmpty(baseUrl) || baseUrl.EndsWith("/"))
-                ? baseUrl
-                : baseUrl + "/";
             _httpClient = httpClient;
             Initialize();
         }
@@ -124,7 +117,7 @@ namespace AutoBlazor.Shared.Services.Base.ClientServcies
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "api/Category/GetCategoryById"
                     urlBuilder_.Append("api/Category/GetCategoryById");
                     urlBuilder_.Append('?');
@@ -208,7 +201,7 @@ namespace AutoBlazor.Shared.Services.Base.ClientServcies
                     request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "api/Category/GetAllCategories"
                     urlBuilder_.Append("api/Category/GetAllCategories");
 
@@ -289,7 +282,7 @@ namespace AutoBlazor.Shared.Services.Base.ClientServcies
                     request_.Method = new System.Net.Http.HttpMethod("POST");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "api/Category/CreateCategory"
                     urlBuilder_.Append("api/Category/CreateCategory");
 
@@ -361,7 +354,7 @@ namespace AutoBlazor.Shared.Services.Base.ClientServcies
                     request_.Method = new System.Net.Http.HttpMethod("GET");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
-                    if (!string.IsNullOrEmpty(_baseUrl)) urlBuilder_.Append(_baseUrl);
+                
                     // Operation Path: "api/Product/ListOfProduct"
                     urlBuilder_.Append("api/Product/ListOfProduct");
 
